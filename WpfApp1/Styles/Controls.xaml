@@ -7,7 +7,6 @@
     <Style
         x:Key="HeaderButton"
         TargetType="Button">
-
         <Setter Property="Height" Value="50" />
         <Setter Property="Width">
             <Setter.Value>
@@ -25,18 +24,22 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
-                        x:Name="border"
-                        Padding="10"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        BorderThickness="0,0,0,5">
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="16"
-                            Foreground="#FFFFFF">
-                            <ContentPresenter ContentSource="{Binding}" />
-                        </TextBlock>
+                        BorderBrush="Gray"
+                        BorderThickness=".5,0,.5,0">
+                        <Border
+                            x:Name="border"
+                            Padding="10"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="0,0,0,5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Foreground="#FFFFFF">
+                                <ContentPresenter ContentSource="{Binding}" />
+                            </TextBlock>
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -51,7 +54,6 @@
     <Style
         x:Key="HeaderButtonImage"
         TargetType="Button">
-
         <Setter Property="Height" Value="50" />
         <Setter Property="Width" Value="120" />
         <Setter Property="Template">
