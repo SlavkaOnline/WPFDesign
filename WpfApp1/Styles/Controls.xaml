@@ -13,7 +13,7 @@
                 <Binding
                     Path="ActualWidth"
                     RelativeSource="{RelativeSource FindAncestor,
-                                                    AncestorType={x:Type Grid}}">
+                                                    AncestorType={x:Type DockPanel}}">
                     <Binding.Converter>
                         <converters:HeaderButtonWidthConverter />
                     </Binding.Converter>
