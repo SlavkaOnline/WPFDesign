@@ -11,14 +11,20 @@
         <Setter Property="MinWidth" Value="100" />
         <Setter Property="Width">
             <Setter.Value>
-                <Binding
-                    Path="ActualWidth"
-                    RelativeSource="{RelativeSource FindAncestor,
-                                                    AncestorType={x:Type DockPanel}}">
-                    <Binding.Converter>
+                <MultiBinding>
+                    <Binding
+                        Path="ActualWidth"
+                        RelativeSource="{RelativeSource FindAncestor,
+                                                        AncestorType={x:Type DockPanel}}" />
+                    <Binding
+                        Path="Children.Count"
+                        RelativeSource="{RelativeSource FindAncestor,
+                                                        AncestorType={x:Type StackPanel}}" />
+                    <MultiBinding.Converter>
                         <converters:HeaderButtonWidthConverter />
-                    </Binding.Converter>
-                </Binding>
+                    </MultiBinding.Converter>
+
+                </MultiBinding>
             </Setter.Value>
         </Setter>
         <Setter Property="Template">

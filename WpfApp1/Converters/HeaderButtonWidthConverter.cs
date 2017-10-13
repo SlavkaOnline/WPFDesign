@@ -8,14 +8,15 @@ using System.Windows.Data;
 
 namespace WpfApp1.Converters
 {
-    public class HeaderButtonWidthConverter : IValueConverter
+    public class HeaderButtonWidthConverter : IMultiValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return (double)value / 5;
+            return (double)values[0] / (int)values[1];
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
